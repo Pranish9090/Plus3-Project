@@ -8,11 +8,31 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             height: 100vh;
-            margin: 0;
+        }
+        nav {
+            background: #2C3E50;
+            width: 100%;
+            padding: 15px;
+            display: flex;
+            padding-left: 20px;
+            justify-content: flex-start;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .nav-links a:hover {
+            background: #34495E;
+            border-radius: 5px;
         }
         .login-container {
             background: white;
@@ -20,6 +40,9 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
+            max-width: 350px;
+            width: 90%;
+            margin-top: 50px; /* Ensures spacing after nav */
         }
         .login-container h2 {
             margin-bottom: 20px;
@@ -30,6 +53,7 @@
             margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
+            font-size: 16px;
         }
         .btn {
             width: 100%;
@@ -40,6 +64,7 @@
             border-radius: 5px;
             cursor: pointer;
             margin-top: 10px;
+            font-size: 16px;
         }
         .btn:hover {
             background: #1A252F;
@@ -51,18 +76,44 @@
             text-decoration: none;
             color: #2C3E50;
             font-weight: bold;
+            display: block;
+            margin: 5px 0;
+        }
+        .options a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 400px) {
+            .login-container {
+                padding: 15px;
+            }
+            .input-field {
+                font-size: 14px;
+            }
+            .btn {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
 <body>
+    <nav>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+        </div>
+    </nav>
     <div class="login-container">
-        <h2>Login to CBHMS</h2>
-        <form>
-            <input type="text" class="input-field" placeholder="User ID" required>
-            <input type="password" class="input-field" placeholder="Password" required>
+        <h2>Login to Healthcare Management System</h2>
+        <form action="#" method="POST">
+            <label for="email">User ID (Email)</label>
+            <input type="email" id="email" class="input-field" name="email" placeholder="Enter your email" required autocomplete="off">
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" class="input-field" name="password" placeholder="Enter your password" required autocomplete="current-password">
+            
             <button type="submit" class="btn">Login</button>
         </form>
         <div class="options">
+            <p><a href="#">Forgot Password?</a></p>
             <p><a href="#">New User? Sign Up</a></p>
             <p><a href="#">Admin Login</a></p>
         </div>

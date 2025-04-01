@@ -11,6 +11,27 @@
             padding: 0;
             background-color: #f4f4f4;
         }
+        nav {
+        background: #2C3E50;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        }
+        .logo {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+        .nav-links a:hover {
+            background: #34495E;
+            border-radius: 5px;
+        }
         header {
             background: #2C3E50;
             color: white;
@@ -18,69 +39,79 @@
             padding: 15px 0;
             font-size: 24px;
         }
-        .doctor-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+        .container {
             padding: 20px;
         }
-        .doctor-card {
-            background: white;
-            padding: 15px;
-            margin: 10px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            width: 250px;
+        .specialty {
+            margin-bottom: 20px;
         }
-        .doctor-card img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-        }
-        footer {
-            background: #2C3E50;
+        .specialty h2 {
+            background: #34495E;
             color: white;
-            text-align: center;
             padding: 10px;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
+        }
+        .doctor {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .doctor img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        .doctor-info {
+            flex: 1;
+        }
+        .availability {
+            font-weight: bold;
+            color: green;
         }
     </style>
 </head>
 <body>
-    <header>
-        Our Doctors
-    </header>
-    <div class="doctor-container">
-        <div class="doctor-card">
-            <img src="doctor1.jpg" alt="Dr. Smith">
-            <h3>Dr. John Smith</h3>
-            <p><strong>Specialty:</strong> Cardiology</p>
-            <p><strong>Experience:</strong> 15 years</p>
-            <p><strong>License:</strong> California</p>
-            <p><strong>Availability:</strong> Mon-Fri (9 AM - 5 PM)</p>
+    <nav>
+        <div class="logo">Cloud-Based Healthcare Management System</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
         </div>
-        <div class="doctor-card">
-            <img src="doctor2.jpg" alt="Dr. Johnson">
-            <h3>Dr. Lisa Johnson</h3>
-            <p><strong>Specialty:</strong> Neurology</p>
-            <p><strong>Experience:</strong> 10 years</p>
-            <p><strong>License:</strong> New York</p>
-            <p><strong>Availability:</strong> Tue-Sat (10 AM - 6 PM)</p>
+    </nav>
+    <div class="container">
+
+        <!-- Cardiology -->
+        <div class="specialty">
+            <h2>Cardiology</h2>
+            <div class="doctor">
+                <img src="doctor1.jpg" alt="Dr. Smith">
+                <div class="doctor-info">
+                    <p><strong>Dr. John Smith</strong></p>
+                    <p>Experience: 15 years</p>
+                    <p>License: Active</p>
+                    <p class="availability">Available: Mon-Fri, 9 AM - 5 PM</p>
+                </div>
+            </div>
         </div>
-        <div class="doctor-card">
-            <img src="doctor3.jpg" alt="Dr. Williams">
-            <h3>Dr. Mark Williams</h3>
-            <p><strong>Specialty:</strong> Pediatrics</p>
-            <p><strong>Experience:</strong> 8 years</p>
-            <p><strong>License:</strong> Texas</p>
-            <p><strong>Availability:</strong> Mon-Thu (8 AM - 3 PM)</p>
+
+        <!-- Neurology -->
+        <div class="specialty">
+            <h2>Neurology</h2>
+            <div class="doctor">
+                <img src="doctor2.jpg" alt="Dr. Jane Doe">
+                <div class="doctor-info">
+                    <p><strong>Dr. Jane Doe</strong></p>
+                    <p>Experience: 10 years</p>
+                    <p>License: Active</p>
+                    <p class="availability">Available: Tue-Thu, 10 AM - 4 PM</p>
+                </div>
+            </div>
         </div>
+
     </div>
-    <footer>
-        &copy; 2025 CBHMS. All Rights Reserved.
-    </footer>
 </body>
 </html>
